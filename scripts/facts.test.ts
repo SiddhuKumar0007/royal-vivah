@@ -17,9 +17,13 @@ test('maps uses the complete postal address, not a fabricated coordinate', () =>
   assert.equal(url.searchParams.get('query'), wedding.venue.join(' '));
   assert.equal(url.searchParams.get('api'), '1');
 });
-test('Pret Bhoj has a supplied time and no invented date', () => {
-  const ceremony = wedding.ceremonies.find(c => c.id === 'pret-bhoj');
+test('Preeti Bhoj has the date and time from the invitation card', () => {
+  const ceremony = wedding.ceremonies.find(c => c.id === 'preeti-bhoj');
   assert.ok(ceremony);
-  assert.equal('date' in ceremony, false);
-  assert.equal(ceremony.time, 'शाम 6:00 बजे से');
+  assert.equal(ceremony.date, '3 दिसम्बर 2026, शाम 4 बजे');
+});
+test('Lineage matches the invitation card', () => {
+  assert.equal(wedding.groomFather, 'श्री पवन कुमार सिंह');
+  assert.equal(wedding.groomGrandfather, 'श्री चंदेश्वर सिंह');
+  assert.equal(wedding.brideFather, 'श्री कामेश्वर सिंह');
 });

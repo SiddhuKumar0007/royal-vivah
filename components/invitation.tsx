@@ -150,7 +150,7 @@ export default function Invitation() {
           <div className="door-leaves"><div className="door-leaf door-left"><DoorPanel side="left"/></div><div className="door-leaf door-right"><DoorPanel side="right"/></div></div>
           <ArchFrame/>
           <div className="door-light" aria-hidden="true"/>
-          <div className="entrance-copy"><Ganesha/><p className="sacred">॥ श्री गणेशाय नमः ॥</p><div className="door-invitation"><p>सस्नेह आमंत्रण</p><h1>{wedding.shortGroom} <span>एवं</span> {wedding.shortBride}</h1><Ornament/></div><button ref={openButton} className="gold-button entrance-button" onClick={openInvitation} aria-disabled={opening}><span className="button-flower">✧</span>{opening ? 'सुस्वागतम्' : 'निमंत्रण खोलें'}</button></div>
+          <div className="entrance-copy"><Ganesha/><p className="sacred">॥ श्री गणेशाय नमः ॥</p><div className="door-invitation"><p>{wedding.greetingBadge}</p><h1>{wedding.shortGroom} <span>एवं</span> {wedding.shortBride}</h1><Ornament/></div><button ref={openButton} className="gold-button entrance-button" onClick={openInvitation} aria-disabled={opening}><span className="button-flower">✧</span>{opening ? 'सुस्वागतम्' : 'निमंत्रण खोलें'}</button></div>
           <Diya className="entrance-diya diya-left"/><Diya className="entrance-diya diya-right"/>
         </div>
         <p className="entrance-side side-right" lang="en">{wedding.venueShortEnglish.toUpperCase()} · {dateLine}</p>
@@ -178,8 +178,26 @@ export default function Invitation() {
           <Botanical className="hero-botanical botanical-left"/><Botanical className="hero-botanical botanical-right"/>
           <div className="hero-copy">
             <div className="couple-reveal sacred-intro"><Ganesha/><p>॥ श्री गणेशाय नमः ॥</p></div>
-            <p className="eyebrow couple-reveal" lang="en">WITH BLESSINGS, A BEAUTIFUL BEGINNING</p>
-            <h1 ref={title} tabIndex={-1} className="couple-names"><span className="couple-reveal">{wedding.groom}</span><span className="couple-reveal conjunction">एवं</span><span className="couple-reveal">{wedding.bride}</span></h1>
+            <div className="couple-reveal saprem-badge"><span className="badge-text">{wedding.greetingBadge}</span></div>
+            <p className="couple-reveal greeting-intro">{wedding.greetingIntro}</p>
+            <div className="couple-reveal hero-card-layout">
+              <div className="hero-person-block">
+                <h1 ref={title} tabIndex={-1} className="person-name">{wedding.groom}</h1>
+                <div className="person-relations">
+                  <p><span className="rel-label">सुपुत्र :</span> <span className="rel-name">{wedding.groomFather}</span></p>
+                  <p><span className="rel-label">सुपौत्र :</span> <span className="rel-name">{wedding.groomGrandfather}</span></p>
+                </div>
+              </div>
+              <div className="hero-divider" aria-hidden="true">
+                <span className="hero-conjunction">एवं</span>
+              </div>
+              <div className="hero-person-block">
+                <h2 className="person-name">{wedding.bride}</h2>
+                <div className="person-relations">
+                  <p><span className="rel-label">सुपुत्री :</span> <span className="rel-name">{wedding.brideFather}</span></p>
+                </div>
+              </div>
+            </div>
             <div className="couple-reveal"><Ornament/><h2 className="shubh">शुभ विवाह</h2></div>
             <p className="hero-english couple-reveal" lang="en">A timeless love story.</p>
             <div className="hero-date couple-reveal" lang="en"><span>{dateLine}</span><i/><span>{wedding.venueShortEnglish.toUpperCase()}</span></div>
@@ -197,7 +215,7 @@ export default function Invitation() {
 
         <section id="celebrations" className="celebrations section-space" aria-labelledby="celebrations-title">
           <div className="section-heading" data-reveal><p className="eyebrow" lang="en">THE WEDDING CELEBRATIONS</p><h2 id="celebrations-title">उत्सव के रंग</h2><p>हर रस्म में प्रेम, हर पल में अपनापन</p><Ornament/></div>
-          <div className="ceremonies">{wedding.ceremonies.map(c=><article className={`ceremony ${c.id}`} key={c.id} data-reveal><div className="ceremony-arch"><CeremonyArt kind={c.kind}/><span>{c.caption}</span></div><div className="ceremony-info"><p className="eyebrow" lang="en">{c.english}</p><h3>{c.name}</h3><p className="ceremony-date">{'date' in c ? c.date : c.time}</p></div></article>)}</div>
+          <div className="ceremonies">{wedding.ceremonies.map(c=><article className={`ceremony ${c.id}`} key={c.id} data-reveal><div className="ceremony-arch"><CeremonyArt kind={c.kind}/><span>{c.caption}</span></div><div className="ceremony-info"><p className="eyebrow" lang="en">{c.english}</p><h3>{c.name}</h3><p className="ceremony-date">{c.date}</p></div></article>)}</div>
           <p className="celebration-footnote" data-reveal>आपकी उपस्थिति इन पलों को और भी सुंदर बनाएगी।</p>
         </section>
 
@@ -208,7 +226,7 @@ export default function Invitation() {
 
         <section id="blessings" className="blessings section-space" aria-labelledby="blessings-title">
           <div className="section-heading" data-reveal><Lotus className="blessings-lotus"/><p className="eyebrow" lang="en">ROOTED IN LOVE. BLESSED BY FAMILY.</p><h2 id="blessings-title">शुभ आशीर्वाद</h2><p>दो परिवारों का स्नेहिल मिलन</p></div>
-          <div className="families" data-reveal><div><span className="family-label">वर पक्ष</span><h3>{wedding.groom}</h3><p>सुपुत्र — {wedding.groomFather}</p></div><div className="family-divider" aria-hidden="true"><Ornament/></div><div><span className="family-label">वधू पक्ष</span><h3>{wedding.bride}</h3><p>सुपुत्री — {wedding.brideFather}</p></div></div>
+          <div className="families" data-reveal><div><span className="family-label">वर पक्ष</span><h3>{wedding.groom}</h3><p>सुपुत्र — {wedding.groomFather}</p><p>सुपौत्र — {wedding.groomGrandfather}</p></div><div className="family-divider" aria-hidden="true"><Ornament/></div><div><span className="family-label">वधू पक्ष</span><h3>{wedding.bride}</h3><p>सुपुत्री — {wedding.brideFather}</p></div></div>
         </section>
 
         <section id="venue" className="venue section-space" aria-labelledby="venue-title">

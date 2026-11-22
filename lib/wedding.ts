@@ -1,9 +1,12 @@
 export const wedding = {
   title: 'The Royal Vivah',
   subtitle: 'A Timeless Love Story',
+  greetingBadge: 'सप्रेम आमंत्रण',
+  greetingIntro: 'हमें यह हर्ष है कि हमारे प्रिय सुपुत्र',
   groom: 'सौरभ कुमार सिंह',
   bride: 'दीपांजलि सिंह',
   groomFather: 'श्री पवन कुमार सिंह',
+  groomGrandfather: 'श्री चंदेश्वर सिंह',
   brideFather: 'श्री कामेश्वर सिंह',
   couple: 'सौरभ एवं दीपांजलि',
   shortGroom: 'सौरभ',
@@ -18,11 +21,11 @@ export const wedding = {
   time: 'शाम 4:00 बजे से',
   venue: ['ग्राम–पटेरवा,', 'पोस्ट–रुपडीह,', 'थाना–मुफ्फसिल मोतिहारी,', 'जिला–पूर्वी चम्पारण,', 'बिहार, भारत'],
   ceremonies: [
-    { id: 'puja', name: 'पूजा एवं मटकोर', english: 'Puja & Matkor', date: '2 दिसंबर 2026, बुधवार', caption: 'आस्था से आरंभ', kind: 'kalash' },
-    { id: 'haldi', name: 'हल्दी एवं मेहंदी', english: 'Haldi & Mehendi', date: '3 दिसंबर 2026, गुरुवार', caption: 'रंगों में रचा प्रेम', kind: 'lotus' },
-    { id: 'pret-bhoj', name: 'प्रीत भोज', english: 'Pret Bhoj', time: 'शाम 6:00 बजे से', caption: 'स्नेह और सत्कार', kind: 'feast' },
+    { id: 'puja', name: 'पूजा एवं मटकोर', english: 'Puja & Matkor', date: '2 दिसम्बर 2026, बुधवार', caption: 'आस्था से आरंभ', kind: 'kalash' },
+    { id: 'haldi', name: 'हल्दी एवं मेहंदी', english: 'Haldi & Mehendi', date: '3 दिसम्बर 2026, गुरुवार', caption: 'रंगों में रचा प्रेम', kind: 'lotus' },
+    { id: 'preeti-bhoj', name: 'प्रीति भोज', english: 'Preeti Bhoj', date: '3 दिसम्बर 2026, शाम 4 बजे', caption: 'स्नेहिल प्रीति भोज', kind: 'feast' },
   ],
-  invitation: 'आप सपरिवार पधारकर शुभ अवसर की शोभा बढ़ाएँ।',
+  invitation: 'आप सपरिवार पधारकर शुभ अवसर की शोभा बढ़ाएँ!',
   closing: 'सौरभ ♥ दीपांजलि',
 } as const;
 
