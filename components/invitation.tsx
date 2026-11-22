@@ -197,7 +197,7 @@ export default function Invitation() {
 
         <section id="celebrations" className="celebrations section-space" aria-labelledby="celebrations-title">
           <div className="section-heading" data-reveal><p className="eyebrow" lang="en">THE WEDDING CELEBRATIONS</p><h2 id="celebrations-title">उत्सव के रंग</h2><p>हर रस्म में प्रेम, हर पल में अपनापन</p><Ornament/></div>
-          <div className="ceremonies">{wedding.ceremonies.map(c=><article className={`ceremony ${c.id}`} key={c.id} data-reveal><div className="ceremony-arch"><CeremonyArt kind={c.kind}/><span>{c.caption}</span></div><div className="ceremony-info"><p className="eyebrow" lang="en">{c.english}</p><h3>{c.name}</h3><p className="ceremony-date">{'date' in c ? c.date : c.time}</p>{c.id==='janeu' && <p className="date-note">तिथि की जानकारी परिवार से प्राप्त करें</p>}</div></article>)}</div>
+          <div className="ceremonies">{wedding.ceremonies.map(c=><article className={`ceremony ${c.id}`} key={c.id} data-reveal><div className="ceremony-arch"><CeremonyArt kind={c.kind}/><span>{c.caption}</span></div><div className="ceremony-info"><p className="eyebrow" lang="en">{c.english}</p><h3>{c.name}</h3><p className="ceremony-date">{'date' in c ? c.date : c.time}</p></div></article>)}</div>
           <p className="celebration-footnote" data-reveal>आपकी उपस्थिति इन पलों को और भी सुंदर बनाएगी।</p>
         </section>
 

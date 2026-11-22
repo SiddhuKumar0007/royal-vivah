@@ -20,7 +20,7 @@ export const wedding = {
   ceremonies: [
     { id: 'puja', name: 'पूजा एवं मटकोर', english: 'Puja & Matkor', date: '2 दिसंबर 2026, बुधवार', caption: 'आस्था से आरंभ', kind: 'kalash' },
     { id: 'haldi', name: 'हल्दी एवं मेहंदी', english: 'Haldi & Mehendi', date: '3 दिसंबर 2026, गुरुवार', caption: 'रंगों में रचा प्रेम', kind: 'lotus' },
-    { id: 'janeu', name: 'जनेऊ कार्यक्रम', english: 'Janeu Ceremony', time: 'संध्या 8 बजे से', caption: 'परंपरा का पावन सूत्र', kind: 'thread' },
+    { id: 'preeti-bhoj', name: 'प्रीति भोज', english: 'Preeti Bhoj', time: 'शाम 6:00 बजे से', caption: 'स्नेह और सत्कार', kind: 'feast' },
   ],
   invitation: 'आप सपरिवार पधारकर शुभ अवसर की शोभा बढ़ाएँ।',
   closing: 'सौरभ ♥ दीपांजलि',
