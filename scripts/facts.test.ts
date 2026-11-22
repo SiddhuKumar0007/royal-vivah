@@ -2,8 +2,8 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { wedding, mapsURL, getCountdown } from '../lib/wedding.ts';
 
-test('wedding instant is 6:30 pm India time on 4 December', () => {
-  assert.equal(new Date(wedding.dateISO).toISOString(), '2026-12-04T13:00:00.000Z');
+test('wedding instant is 4:00 pm India time on 4 December', () => {
+  assert.equal(new Date(wedding.dateISO).toISOString(), '2026-12-04T10:30:00.000Z');
   assert.equal(new Intl.DateTimeFormat('en-US', { timeZone: wedding.timezone, weekday: 'long' }).format(new Date(wedding.dateISO)), 'Friday');
 });
 test('countdown handles before, exact instant and after without negatives', () => {
@@ -17,9 +17,9 @@ test('maps uses the complete postal address, not a fabricated coordinate', () =>
   assert.equal(url.searchParams.get('query'), wedding.venue.join(' '));
   assert.equal(url.searchParams.get('api'), '1');
 });
-test('Preeti Bhoj has a supplied time and no invented date', () => {
-  const ceremony = wedding.ceremonies.find(c => c.id === 'preeti-bhoj');
+test('Pret Bhoj has a supplied time and no invented date', () => {
+  const ceremony = wedding.ceremonies.find(c => c.id === 'pret-bhoj');
   assert.ok(ceremony);
   assert.equal('date' in ceremony, false);
-  assert.equal(ceremony.time, 'शाम 6:00 बजे से');
+  assert.equal(ceremony.time, 'शाम 4:00 बजे से');
 });
